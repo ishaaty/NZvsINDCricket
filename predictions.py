@@ -23,6 +23,8 @@ rf_model_on_full_data.fit(Xdrop, ydrop)
 test_preds = rf_model_on_full_data.predict(PredictXdrop)
 test_preds = test_preds.tolist()
 
+print(test_preds)
+
 output = pd.DataFrame({'Dates': PredictX.Dates, 'Winner': test_preds[0][0], 'IND_Runs' : test_preds[1][1], 'NZ_Runs' : test_preds[2][2]})
 
 print(output)
