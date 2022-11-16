@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor
 
 # reads & describes data from files
 X = pd.read_csv('Xdata.csv')
-y = pd.read_csv('Ydata.csv')
+y = pd.read_csv('YdataCopy.csv')
 print(X.describe())
 
 # drops the column name 'Date' from the dataset
@@ -23,7 +23,8 @@ rf_model_on_full_data.fit(Xdrop, ydrop)
 test_preds = rf_model_on_full_data.predict(PredictXdrop)
 test_preds = test_preds.tolist()
 
-output = pd.DataFrame({'Dates': PredictX.Dates, 'Winner': test_preds[0][0], 'IND_Runs' : test_preds[1][1], 'NZ_Runs' : test_preds[2][2], 'IND_Wickets' : test_preds[3][3], 'NZ_Wickets' : test_preds[4][4]})
+# output = pd.DataFrame({'Dates': PredictX.Dates, 'Winner': test_preds[0][0], 'IND_Runs' : test_preds[1][1], 'NZ_Runs' : test_preds[2][2], 'IND_Wickets' : test_preds[3][3], 'NZ_Wickets' : test_preds[4][4]})
+output = pd.DataFrame({'Dates': PredictX.Dates, 'Winner': test_preds})
 
 print(output)
 
