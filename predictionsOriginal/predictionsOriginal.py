@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor
 
 # reads & describes data from files
 X = pd.read_csv('Xdata.csv')
-y = pd.read_csv('Ydata.csv')
+y = pd.read_csv('predictionsOriginal/Ydata.csv')
 print(X.describe())
 
 # drops the column name 'Date' from the dataset
